@@ -1,0 +1,12 @@
+.template-item {
+  text-align: left;
+  padding: 1em;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+.token-name {
+  background-color: blue;
+  border-radius: 0.25em;
+  padding: 0.25em;
+}

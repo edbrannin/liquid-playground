@@ -1,0 +1,8 @@
+.template-output {
+  text-align: left;
+  padding: 1em;
+  white-space: pre-wrap;
+  font-family: monospace;
+  border: 1px solid gray;
+  border-radius: 1em;
+}
