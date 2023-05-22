@@ -11,11 +11,16 @@ const TemplateInput = ({
     ...values,
     [name]: newValue,
   });
+  const value = values[name] || '';
   return (
     <label htmlFor={name}>
       {name}
       <br />
-      <input name={name} value={values[name]} onChange={(e) => onChange(e.target.value)} />
+      <input
+        name={name}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
     </label>
   )
 }
