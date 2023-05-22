@@ -1,6 +1,6 @@
 import { Liquid } from 'liquidjs';
 import { useEffect, useState } from 'react';
-import './TemplateOutput.css';
+import styles from './TemplateOutput.module.css';
 
 const liquid = new Liquid();
 
@@ -26,7 +26,7 @@ const TemplateOutput = ({
     <div>
       <h2>Result</h2>
       <button onClick={() => navigator.clipboard.writeText(result)}>Copy</button>
-      <div className="template-output">
+      <div className={styles.templateOutput}>
         {result}
       </div>
     </div>

@@ -1,11 +1,11 @@
-.template-item {
+.templateItem {
   text-align: left;
   padding: 1em;
   white-space: pre-wrap;
   font-family: monospace;
 }
 
-.token-name {
+.tokenName {
   background-color: blue;
   border-radius: 0.25em;
   padding: 0.25em;

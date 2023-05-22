@@ -1,6 +1,6 @@
-import { Liquid, Template, Token, TokenKind } from 'liquidjs';
+import { Liquid, Template, TokenKind } from 'liquidjs';
 import { useEffect, useMemo } from 'react';
-import './TemplateParser.css';
+import styles from './TemplateParser.module.css';
 import { OutputToken } from 'liquidjs/dist/src/tokens';
 
 const liquid = new Liquid();
@@ -17,17 +17,17 @@ const TemplateItem = ({
   if (token.kind == TokenKind.Output) {
     const outputToken = token as OutputToken;
     return (
-      <div className="template-item">
+      <div className={styles.templateItem}>
         Variable:
         {' '}
-        <span className="token-name">
+        <span className={styles.tokenName}>
           {outputToken.content}
         </span>
       </div>
     );
   }
   return (
-    <div className='template-item'>
+    <div className={styles.templateItem}>
       {JSON.stringify(item, null, 2)}
     </div>
   );
