@@ -5,7 +5,11 @@ import TemplateOutput from './TemplateOutput'
 import TemplateParser from './TemplateParser'
 import TemplateInputs from './TemplateInputs'
 
-const DEFAULT_TEMPLATE = `Paste your LiquidJS Template here`
+const DEFAULT_TEMPLATE = `
+Paste your LiquidJS Template here
+
+{{ myVariable }}
+`.trim();
 
 function App() {
   const [template, setTemplate] = useState(DEFAULT_TEMPLATE);
@@ -21,8 +25,8 @@ function App() {
       <div className="App">
         <TemplateInput template={template} setTemplate={setTemplate} />
         <div>
-        <TemplateInputs inputs={inputs} values={values} setValues={setValues} />
-        <TemplateParser template={template} setInputs={setInputs}  />
+          <TemplateInputs inputs={inputs} values={values} setValues={setValues} />
+          <TemplateParser template={template} setInputs={setInputs}  />
         </div>
         <TemplateOutput template={template} values={values} />
       </div>
