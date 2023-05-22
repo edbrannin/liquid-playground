@@ -11,7 +11,7 @@ const TemplateInput = ({
   return (
     <div>
       <h2>Template</h2>
-      <textarea rows={rows} cols={cols} value={template} onChange={(e) => setTemplate(e.target.value)} />
+      <textarea placeholder="Paste your LiquidJS template here..." rows={rows} cols={cols} value={template} onChange={(e) => setTemplate(e.target.value)} />
     </div>
   );
 };
