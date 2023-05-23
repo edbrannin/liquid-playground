@@ -7,7 +7,9 @@ export type TemplateContext = Record<string, string | number>;
 
 const liquid = new Liquid();
 
-const useLiquid = (initialTemplate = '', initialValues = {}, renderOptions: RenderOptions = {}) => {
+const DEFAULT_RENDER_OPTIONS = {};
+
+const useLiquid = (initialTemplate = '', initialValues = {}, renderOptions: RenderOptions = DEFAULT_RENDER_OPTIONS) => {
   const [template, setTemplate] = useState(initialTemplate);
   const [inputNames, setInputNames] = useState<string[]>([]);
   const [values, setValues] = useState<TemplateContext>(initialValues);
