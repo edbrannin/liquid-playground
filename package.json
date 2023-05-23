@@ -1,5 +1,6 @@
 {
-  "name": "templater",
+  "name": "liquid-playground",
+  "description": "A LiquidJS playground UI",
   "private": true,
   "version": "0.0.0",
   "type": "module",
