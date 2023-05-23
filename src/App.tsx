@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import './App.css'
 import TemplateInput from './TemplateInput'
 import TemplateOutput from './TemplateOutput'
-import TemplateParser from './TemplateParser'
-import TemplateInputs from './TemplateInputs'
+import ContextInputs from './ContextInputs'
+import useLiquid from './useLiquid'
 
 const DEFAULT_TEMPLATE = `
 Paste your LiquidJS Template here
@@ -12,23 +11,15 @@ Paste your LiquidJS Template here
 `.trim();
 
 function App() {
-  const [template, setTemplate] = useState(DEFAULT_TEMPLATE);
-  const [inputs, setInputs] = useState<string[]>([]);
-  const [values, setValues] = useState<Record<string, string | number>>({
-    id: 7,
-    identifyAs911: 'disabled'
-  });
+  const { template, setTemplate, inputNames, values, setValues, result } = useLiquid(DEFAULT_TEMPLATE);
 
   return (
     <>
       <h1>Liquid Playground</h1>
       <div className="App">
         <TemplateInput template={template} setTemplate={setTemplate} />
-        <div>
-          <TemplateInputs inputs={inputs} values={values} setValues={setValues} />
-          <TemplateParser template={template} setInputs={setInputs}  />
-        </div>
-        <TemplateOutput template={template} values={values} />
+        <ContextInputs inputNames={inputNames} values={values} setValues={setValues} />
+        <TemplateOutput result={result} />
       </div>
     </>
   )

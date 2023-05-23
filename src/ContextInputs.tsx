@@ -1,4 +1,6 @@
-const TemplateInput = ({
+import styles from './ContextInputs.module.css';
+
+const ContextInput = ({
   name,
   values,
   setValues,
@@ -25,25 +27,25 @@ const TemplateInput = ({
   )
 }
 
-const TemplateInputs = ({
-  inputs,
+const ContextInputs = ({
+  inputNames,
   values,
   setValues,
 }: {
-  inputs: string[]
+  inputNames: string[]
   values: Record<string, string | number>,
   setValues: (newValues: Record<string, string | number>) => void,
 }) => {
   return (
-    <div>
+    <div className={styles.contextInputs}>
       <h2>Inputs</h2>
-      {inputs.map(key => (
+      {inputNames.map(key => (
         <div key={key}>
-          <TemplateInput name={key} values={values} setValues={setValues} />
+          <ContextInput name={key} values={values} setValues={setValues} />
         </div>
       ))}
     </div>
   )
 };
 
-export default TemplateInputs;
+export default ContextInputs;
